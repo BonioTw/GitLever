@@ -18,21 +18,41 @@
   </body>
 
   <script>
-    var $ = require('jQuery');
-    var obj = {};
-    var sp = require('serialport');
-    sp.list(function(err, ports) {
-      obj["port_name"] = ports[1].comName;
-      PrintSerialValue();
-    });
+    // var $ = require('jQuery');
+    // var obj = {};
+    // var sp = require('serialport');
+    // sp.list(function(err, ports) {
+    //   obj["port_name"] = ports[1].comName;
+    //   PrintSerialValue();
+    // });
 
-    function PrintSerialValue(){
-      var SerialPort = require('serialport');
-      var port = new SerialPort(obj.port_name);
-      port.on('data', (data) => {
-        let command = data.toString();
-        $('#command').append('<li>'+ command +'</li>');
-      })
-    }
+    // function PrintSerialValue(){
+    //   var SerialPort = require('serialport');
+    //   var port = new SerialPort(obj.port_name);
+    //   port.on('data', (data) => {
+    //     let command = data.toString();
+    //     $('#command').append('<li>'+ command +'</li>');
+    //   })
+    // }
+
+
+    var shell = require('shelljs');
+    var exec = require('child_process').exec;
+    // debugger
+    exec('subl .', function(result) {
+      console.log(result);
+    })
+    //console.log(result.exitCode);
+    // shell.cd('..');
+    // if (exec('git -h').code !== 0) {
+    //   shell.echo('Error: Git commit failed');
+    //   shell.exit(1);
+    // }
+    // if (shell.which('git')) {
+    //   console.log(exec('git pull');
+    //   // exec('git pull').code == 1;
+    //   shell.echo('Error: Git commit failed');
+    //   // shell.mkdir('test');
+    // }
   </script>
 </html>
