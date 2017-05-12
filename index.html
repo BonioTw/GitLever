@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>GIT LEVER</title>
+  </head>
+  <body>
+    <h1>Git Lever</h1>
+    <p>
+      We are using Node.js <script>document.write(process.versions.node)</script> <br>
+      Chromium <script>document.write(process.versions.chrome)</script>, <br>
+      and Electron <script>document.write(process.versions.electron)</script>.
+    </p>
+
+    <div class="command_list">
+      <ul id="command"></ul>
+    </div>
+  </body>
+
+  <script>
+    var $ = require('jQuery');
+    var obj = {};
+    var sp = require('serialport');
+    sp.list(function(err, ports) {
+      obj["port_name"] = ports[1].comName;
+      PrintSerialValue();
+    });
+
+    function PrintSerialValue(){
+      var SerialPort = require('serialport');
+      var port = new SerialPort(obj.port_name);
+      port.on('data', (data) => {
+        let command = data.toString();
+        $('#command').append('<li>'+ command +'</li>');
+      })
+    }
+  </script>
+</html>
