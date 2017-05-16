@@ -38,11 +38,14 @@
 
     var shell = require('shelljs');
     var exec = require('child_process').exec;
+    exec('cd /Users/Coda/Desktop/electron-quick-start');
+    // exec('git push')
+    // console.log(shell.pwd());
     // debugger
-    exec('subl .', function(result) {
+    exec('git push', function(result) {
       console.log(result);
     })
-    //console.log(result.exitCode);
+    // //console.log(result.exitCode);
     // shell.cd('..');
     // if (exec('git -h').code !== 0) {
     //   shell.echo('Error: Git commit failed');
