@@ -17,6 +17,7 @@
     </div>
   </body>
 
+  <script type="text/javascript" src="./node-notifier.js"></script>
   <script>
     var $ = require('jQuery');
     var obj = {};
@@ -32,6 +33,7 @@
       port.on('data', (data) => {
         let command = data.toString();
         $('#command').append('<li>'+ command +'</li>');
+        send_notify(command, "讚讚讚");
       })
     }
   </script>
