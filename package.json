@@ -21,6 +21,7 @@
     "electron-rebuild": "^1.5.7"
   },
   "dependencies": {
+    "node-notifier": "^5.1.2",
     "serialport": "^4.0.7"
   }
 }
