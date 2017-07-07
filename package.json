@@ -7,7 +7,7 @@
     "rebuild": "electron-rebuild",
     "start": "electron .",
     "build": "npm run rebuild && electron-packager . GitLever --all -all --electron-version=1.7.4",
-    "build:darwin": "npm run rebuild && electron-packager . GitLever --platform=darwin --arch=x64 --electron-version=1.7.4"
+    "build:darwin": "npm run rebuild && electron-packager . GitLever --platform=darwin --arch=x64 --electron-version=1.7.4 --icon=Icon.icns"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -25,7 +25,9 @@
     "electron-rebuild": "^1.5.11"
   },
   "dependencies": {
+    "electron-packager": "^8.7.2",
     "jquery": "^3.2.1",
+    "menubar": "^5.2.3",
     "node-notifier": "^5.1.2",
     "serialport": "^4.0.7"
   }

@@ -57,5 +57,13 @@ app.on('activate', function () {
   console.log('active')
 })
 
+    var menubar = require('menubar')
+
+    var mb = menubar();
+    mb.on('ready', function ready () {
+      console.log('app is ready')
+      // your app code here
+    })
+
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
