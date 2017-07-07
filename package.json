@@ -4,6 +4,7 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
+    "rebuild": "./node_modules/.bin/electron-rebuild",
     "start": "electron ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
