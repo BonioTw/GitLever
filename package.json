@@ -4,8 +4,10 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "rebuild": "./node_modules/.bin/electron-rebuild",
-    "start": "electron ."
+    "rebuild": "electron-rebuild",
+    "start": "electron .",
+    "build": "npm run rebuild && electron-packager . GitLever --all -all --electron-version=1.7.4",
+    "build:darwin": "npm run rebuild && electron-packager . GitLever --platform=darwin --arch=x64 --electron-version=1.7.4"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -19,6 +21,7 @@
   "devDependencies": {
     "devtron": "^1.4.0",
     "electron": "^1.6.6",
+    "electron-packager": "^8.7.2",
     "electron-rebuild": "^1.5.11"
   },
   "dependencies": {
